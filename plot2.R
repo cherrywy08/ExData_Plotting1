@@ -10,6 +10,7 @@ target_data$Time <- as.POSIXct(paste(target_data$Date, target_data$Time), format
 target_data[,3:9] <- sapply(target_data[,3:9], as.numeric)
 
 # Plot
+par(bg = "white")
 with(target_data, plot(Time, Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)"))
 dev.copy(png, file = "plot2.png")
 dev.off()

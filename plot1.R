@@ -10,6 +10,7 @@ target_data$Time <- as.POSIXct(paste(target_data$Date, target_data$Time), format
 target_data[,3:9] <- sapply(target_data[,3:9], as.numeric)
 
 # Plot histogram and generate png file
+par(bg = "white")
 hist(target_data$Global_active_power, xlab = "Global Active Power (kilowatts)", main = "Global Active Power", col = "red")
 dev.copy(png, file = "plot1.png")
 dev.off()

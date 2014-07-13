@@ -13,6 +13,7 @@ target_data[,3:9] <- sapply(target_data[,3:9], as.numeric)
 par(mfrow = c(2,2))
 par(cex.axis = 0.8)
 par(cex.lab = 0.8)
+par(bg = "white")
 
 # Plot top left gragh
 with(target_data, plot(Time, Global_active_power, type = "l", xlab = "", ylab = "Global Active Power"))
@@ -21,11 +22,12 @@ with(target_data, plot(Time, Global_active_power, type = "l", xlab = "", ylab = 
 with(target_data, plot(Time, Voltage, type = "l", xlab = "datetime", ylab = "Voltage"))
 
 # Plot bottom left gragh
+par(bg = "transparent")
 with(target_data, plot(Time, Sub_metering_1, type = 'n', xlab = "", ylab = "Energy sub metering"))
 with(target_data, lines(Time, Sub_metering_1))
 with(target_data, lines(Time, Sub_metering_2, col = "red"))
 with(target_data, lines(Time, Sub_metering_3, col = "blue"))
-legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), box.lty = 0, cex = 0.7)
+legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = 0.7, box.lty = 0)
 
 # Plot bottom right gragh
 with(target_data, plot(Time, Global_reactive_power, type = "l", xlab = "datetime"))

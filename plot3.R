@@ -10,6 +10,7 @@ target_data$Time <- as.POSIXct(paste(target_data$Date, target_data$Time), format
 target_data[,3:9] <- sapply(target_data[,3:9], as.numeric)
 
 # Plot
+par(bg = "white")
 with(target_data, plot(Time, Sub_metering_1, type = 'n', xlab = "", ylab = "Energy sub metering"))
 with(target_data, lines(Time, Sub_metering_1))
 with(target_data, lines(Time, Sub_metering_2, col = "red"))
